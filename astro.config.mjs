@@ -5,7 +5,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   // The Magic Cloudflare Engine:
-  output: 'hybrid',
+  output: 'static',
   adapter: cloudflare(),
 
   // Your Integrations:
