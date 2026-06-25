@@ -1,9 +1,7 @@
 name = "my-crochet-blog"
+main = "dist/_worker.js"
 compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
 
-[vars]
-# Non-secret env vars go here (if any)
-
-# Secret env vars (KEYSTATIC_GITHUB_CLIENT_ID, KEYSTATIC_GITHUB_CLIENT_SECRET, KEYSTATIC_SECRET)
-# must be set via: npx wrangler secret put <SECRET_NAME>
-# Do NOT put secrets in this file.
+[assets]
+directory = "dist"
