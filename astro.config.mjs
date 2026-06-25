@@ -12,8 +12,8 @@ const site =
 export default defineConfig({
   site,
 
-  // hybrid = static pages + server routes for Keystatic API
-  output: 'hybrid',
+  // static + adapter = static pages + server routes for Keystatic API
+  output: 'static',
   adapter: cloudflare(),
 
   integrations: [markdoc(), mdx(), react(), keystatic()],
