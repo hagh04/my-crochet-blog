@@ -1,7 +1,10 @@
 import { config, fields, collection } from '@keystatic/core';
 
 export default config({
-    storage: { kind: 'local' },
+    storage: {
+        kind: 'github',
+        repo: 'hagh04/my-crochet-blog'
+    },
     collections: {
         blog: collection({
             label: 'Blog Posts',
