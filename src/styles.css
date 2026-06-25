@@ -1,6 +1,6 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+@source "../src";
 
 @font-face {
   font-family: "Inter";
@@ -265,6 +265,7 @@
     letter-spacing: -0.01em;
     scroll-margin-top: 6rem;
   }
+
   & h3 {
     font-family: var(--font-serif);
     font-size: 1.35rem;
@@ -273,18 +274,22 @@
     margin-bottom: 0.75rem;
     scroll-margin-top: 6rem;
   }
+
   & p {
     margin-bottom: 1.25rem;
   }
+
   & a {
     color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
   }
+
   & a:hover {
     text-decoration-thickness: 2px;
   }
+
   & blockquote {
     border-left: 2px solid var(--color-primary);
     padding-left: 1.25rem;
@@ -294,20 +299,25 @@
     font-family: var(--font-serif);
     font-size: 1.15rem;
   }
+
   & ul,
   & ol {
     margin: 1.25rem 0;
     padding-left: 1.5rem;
   }
+
   & ul {
     list-style: disc;
   }
+
   & ol {
     list-style: decimal;
   }
+
   & li {
     margin-bottom: 0.5rem;
   }
+
   & code {
     font-family: var(--font-mono);
     font-size: 0.9em;
@@ -316,10 +326,12 @@
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
   }
+
   .dark & code {
     color: oklch(0.88 0.08 55);
     background: oklch(0.23 0.006 80);
   }
+
   & .code-block {
     position: relative;
     width: 100%;
@@ -327,6 +339,7 @@
     min-width: 0;
     margin: 1.5rem 0;
   }
+
   & pre {
     box-sizing: border-box;
     width: 100%;
@@ -343,12 +356,14 @@
     line-height: 1.6;
     box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.75);
   }
+
   .dark & pre {
     color: oklch(0.91 0.012 85) !important;
     background: oklch(0.18 0.006 80) !important;
     border-color: oklch(0.33 0.006 80);
     box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.06);
   }
+
   & pre code {
     display: block;
     min-width: max-content;
@@ -356,16 +371,20 @@
     background: transparent;
     padding: 0;
   }
+
   .dark & pre code {
     color: inherit;
     background: transparent;
   }
+
   & pre span {
     color: oklch(0.28 0.035 70) !important;
   }
+
   .dark & pre span {
     color: oklch(0.89 0.014 85) !important;
   }
+
   & .code-copy-button {
     position: absolute;
     top: 0.55rem;
@@ -386,12 +405,14 @@
       background-color 150ms ease,
       opacity 150ms ease;
   }
+
   & .code-copy-button:hover,
   & .code-copy-button:focus-visible {
     color: var(--color-foreground);
     border-color: var(--color-primary);
     outline: none;
   }
+
   & .code-copy-button::after {
     position: absolute;
     right: 0;
@@ -413,27 +434,32 @@
       opacity 150ms ease,
       transform 150ms ease;
   }
+
   & .code-copy-button:hover::after,
   & .code-copy-button:focus-visible::after,
   & .code-copy-button.is-copied::after {
     opacity: 1;
     transform: translateY(0);
   }
+
   .dark & .code-copy-button {
     color: oklch(0.73 0.012 85);
     background: oklch(0.24 0.006 80 / 0.94);
     border-color: oklch(0.38 0.006 80);
   }
+
   .dark & .code-copy-button:hover,
   .dark & .code-copy-button:focus-visible {
     color: var(--color-foreground);
     border-color: var(--color-primary);
   }
+
   & hr {
     border: 0;
     border-top: 1px solid var(--color-border);
     margin: 2.5rem 0;
   }
+
   & img {
     border-radius: 8px;
     margin: 1.5rem 0;

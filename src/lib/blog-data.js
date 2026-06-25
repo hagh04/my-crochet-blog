@@ -8,48 +8,41 @@ const siteUrl = (
 
 export const authors = [
   {
-    slug: "elena-march",
-    name: "Elena March",
-    bio: "Writer & editor covering design, craft, and slow technology.",
+    slug: "hamza",
+    name: "Hamza",
+    bio: "Crochet enthusiast and pattern designer sharing handmade creations.",
     longBio:
-      "Elena March writes about the quiet edges of design and technology. Previously an editor at two small magazines, she now publishes essays and field notes from a desk overlooking the harbour.",
-    avatar: "https://i.pravatar.cc/200?img=47",
-  },
-  {
-    slug: "samuel-okafor",
-    name: "Samuel Okafor",
-    bio: "Software engineer with a soft spot for typography and the open web.",
-    longBio:
-      "Samuel builds tools for writers and reads more than he ships. He believes the best interfaces are the ones you don't notice.",
+      "Hamza is a passionate crocheter who loves designing patterns for blankets, amigurumi, and wearable accessories. When not working with yarn, you'll find him exploring new stitch techniques and sharing tutorials.",
     avatar: "https://i.pravatar.cc/200?img=12",
-  },
-  {
-    slug: "mira-iwasaki",
-    name: "Mira Iwasaki",
-    bio: "Photographer and essayist based between Kyoto and Lisbon.",
-    longBio:
-      "Mira's work sits at the intersection of place, memory, and the everyday object. Her essays have appeared in a number of small but loved publications.",
-    avatar: "https://i.pravatar.cc/200?img=32",
   },
 ];
 
 export const categories = [
-  { slug: "essays", name: "Essays" },
-  { slug: "design", name: "Design" },
-  { slug: "engineering", name: "Engineering" },
-  { slug: "field-notes", name: "Field Notes" },
-  { slug: "interviews", name: "Interviews" },
+  { slug: "patterns", name: "Patterns" },
+  { slug: "tutorials", name: "Tutorials" },
+  { slug: "amigurumi", name: "Amigurumi" },
+  { slug: "wearables", name: "Wearables" },
+  { slug: "home-decor", name: "Home Decor" },
+  { slug: "baby-kids", name: "Baby & Kids" },
+  { slug: "tips-techniques", name: "Tips & Techniques" },
+  { slug: "yarn-reviews", name: "Yarn Reviews" },
 ];
 
 export const tags = [
-  { slug: "writing", name: "Writing" },
-  { slug: "typography", name: "Typography" },
-  { slug: "minimalism", name: "Minimalism" },
-  { slug: "tools", name: "Tools" },
-  { slug: "travel", name: "Travel" },
-  { slug: "process", name: "Process" },
-  { slug: "web", name: "Web" },
-  { slug: "books", name: "Books" },
+  { slug: "beginner", name: "Beginner" },
+  { slug: "intermediate", name: "Intermediate" },
+  { slug: "advanced", name: "Advanced" },
+  { slug: "blankets", name: "Blankets" },
+  { slug: "scarves", name: "Scarves" },
+  { slug: "hats", name: "Hats" },
+  { slug: "toys", name: "Toys" },
+  { slug: "bags", name: "Bags" },
+  { slug: "granny-square", name: "Granny Square" },
+  { slug: "doilies", name: "Doilies" },
+  { slug: "cardigans", name: "Cardigans" },
+  { slug: "cotton-yarn", name: "Cotton Yarn" },
+  { slug: "acrylic-yarn", name: "Acrylic Yarn" },
+  { slug: "free-pattern", name: "Free Pattern" },
 ];
 
 const isoDate = (date) => date?.toISOString().slice(0, 10);
@@ -107,8 +100,8 @@ export const formatDate = (iso) =>
   });
 
 export const SITE = {
-  name: "Quiet Pages",
+  name: "Crochet Corner",
   description:
-    "An independent magazine on writing, design, and the slow web. Published occasionally, read closely.",
+    "A cozy crochet blog featuring patterns, tutorials, yarn reviews, and handmade inspiration for every skill level.",
   url: siteUrl,
 };
