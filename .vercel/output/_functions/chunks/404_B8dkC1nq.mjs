@@ -1,0 +1,28 @@
+import { c as createComponent } from './astro-component_CabZ88q0.mjs';
+import 'piccolore';
+import { r as renderComponent, b as renderTemplate, m as maybeRenderHead } from './entrypoint_CHSjsHNx.mjs';
+import { $ as $$BaseLayout } from './BaseLayout_BZnZ_Rv_.mjs';
+
+const $$404 = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "Page not found - Quiet Pages", "description": "The page could not be found." }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="mx-auto max-w-2xl px-5 py-32 text-center"> <div class="font-serif text-7xl font-semibold tracking-tight">404</div> <h1 class="mt-4 font-serif text-2xl font-semibold">Lost in the margins</h1> <p class="mt-3 text-muted-foreground">
+The page you're looking for has wandered off. It may have been moved, retitled, or never existed at all.
+</p> <div class="mt-6 flex justify-center gap-3"> <a href="/" class="rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-90">
+Back home
+</a> <a href="/blog" class="rounded-md border border-border px-4 py-2 text-sm hover:bg-muted">
+Browse the archive
+</a> </div> </div> ` })}`;
+}, "C:/Users/Admin/my-crochet-blog/src/pages/404.astro", void 0);
+
+const $$file = "C:/Users/Admin/my-crochet-blog/src/pages/404.astro";
+const $$url = "/404";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$404,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
