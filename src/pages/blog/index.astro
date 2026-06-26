@@ -5,6 +5,8 @@ import PostCard from "../../components/PostCard.astro";
 import Icon from "../../components/Icon.astro";
 import { SITE, categories, sortedPosts, tags } from "../../lib/blog-data.js";
 
+export const prerender = true;
+
 const posts = await sortedPosts();
 ---
 
