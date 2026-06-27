@@ -1,4 +1,5 @@
 import { config, fields, collection } from '@keystatic/core';
+import { block } from '@keystatic/core/content-components';
 
 export default config({
     storage: {
@@ -43,7 +44,48 @@ export default config({
                     label: 'Cloudinary Thumbnail URL',
                     description: 'Paste your Cloudinary link here'
                 }),
-                content: fields.mdx({ label: 'Article Content' }),
+                content: fields.mdx({
+                    label: 'Article Content',
+                    components: {
+                        CloudImage: block({
+                            label: 'Image (URL)',
+                            description: 'Insert an image from an external URL (Cloudinary, Unsplash, etc.)',
+                            schema: {
+                                src: fields.url({
+                                    label: 'Image URL',
+                                    validation: { isRequired: true },
+                                }),
+                                alt: fields.text({
+                                    label: 'Alt Text',
+                                    description: 'Describe the image for accessibility',
+                                    validation: { isRequired: true },
+                                }),
+                                caption: fields.text({
+                                    label: 'Caption (optional)',
+                                    description: 'Photo credit or description shown below the image',
+                                }),
+                            },
+                        }),
+                        PatternLink: block({
+                            label: 'Pattern Link',
+                            description: 'Link to an external pattern source with designer credit',
+                            schema: {
+                                url: fields.url({
+                                    label: 'Pattern URL',
+                                    validation: { isRequired: true },
+                                }),
+                                designer: fields.text({
+                                    label: 'Designer Name',
+                                    validation: { isRequired: true },
+                                }),
+                                source: fields.text({
+                                    label: 'Source (e.g. Ravelry, Etsy, Blog)',
+                                    defaultValue: 'Free Pattern',
+                                }),
+                            },
+                        }),
+                    },
+                }),
             },
         }),
     },

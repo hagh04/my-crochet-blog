@@ -7,6 +7,8 @@ import TableOfContents from "../../components/TableOfContents.astro";
 import PostCard from "../../components/PostCard.astro";
 import Newsletter from "../../components/Newsletter.astro";
 import Icon from "../../components/Icon.astro";
+import CloudImage from "../../components/CloudImage.astro";
+import PatternLink from "../../components/PatternLink.astro";
 import {
   SITE,
   getAuthor,
@@ -150,7 +152,7 @@ const jsonLd = {
     <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_220px]">
       <div class="mx-auto w-full min-w-0 max-w-2xl">
         <div class="prose-article">
-          <Content />
+          <Content components={{ CloudImage, PatternLink }} />
         </div>
 
         <div class="mt-10 flex flex-wrap items-center gap-2">

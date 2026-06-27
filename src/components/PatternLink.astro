@@ -1,0 +1,30 @@
+---
+/**
+ * Renders a styled link to an external pattern source.
+ * Used as a custom MDX component in Keystatic content.
+ */
+
+interface Props {
+  url: string;
+  designer: string;
+  source?: string;
+}
+
+const { url, designer, source = "Free Pattern" } = Astro.props;
+---
+
+<div class="my-4 flex items-center gap-3 rounded-md border border-border bg-muted/30 px-4 py-3">
+  <div class="flex-1">
+    <div class="text-sm font-medium">
+      Designer: <span class="text-foreground">{designer}</span>
+    </div>
+  </div>
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:opacity-90"
+  >
+    {source} &rarr;
+  </a>
+</div>

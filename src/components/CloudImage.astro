@@ -1,0 +1,31 @@
+---
+/**
+ * Renders an external image from a URL.
+ * Used as a custom MDX component in Keystatic content.
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+const { src, alt, caption } = Astro.props;
+---
+
+<figure class="my-8">
+  <div class="overflow-hidden rounded-md">
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      class="w-full"
+    />
+  </div>
+  {caption && (
+    <figcaption class="mt-2 text-center text-sm text-muted-foreground">
+      {caption}
+    </figcaption>
+  )}
+</figure>
