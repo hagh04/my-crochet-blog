@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 const siteUrl = (
   import.meta.env.SITE_URL ||
   import.meta.env.PUBLIC_SITE_URL ||
-  "https://quietpages-eta.vercel.app"
+  "https://softcrochet.com"
 ).replace(/\/$/, "");
 
 export const authors = [
@@ -100,7 +100,7 @@ export const formatDate = (iso) =>
   });
 
 export const SITE = {
-  name: "Crochet Corner",
+  name: "Soft Crochet",
   description:
     "A cozy crochet blog featuring patterns, tutorials, yarn reviews, and handmade inspiration for every skill level.",
   url: siteUrl,

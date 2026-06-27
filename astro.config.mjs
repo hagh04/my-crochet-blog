@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 import vercel from '@astrojs/vercel';
 
 const site =
-  process.env.SITE_URL || process.env.PUBLIC_SITE_URL || 'https://my-crochet-blog.vercel.app';
+  process.env.SITE_URL || process.env.PUBLIC_SITE_URL || 'https://softcrochet.com';
 
 export default defineConfig({
   site,
