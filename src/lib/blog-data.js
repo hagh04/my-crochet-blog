@@ -10,9 +10,9 @@ export const authors = [
   {
     slug: "hamza",
     name: "Hamza",
-    bio: "Crochet enthusiast and pattern designer sharing handmade creations.",
+    bio: "Editor and crochet enthusiast curating the best free patterns from talented designers worldwide.",
     longBio:
-      "Hamza is a passionate crocheter who loves designing patterns for blankets, amigurumi, and wearable accessories. When not working with yarn, you'll find him exploring new stitch techniques and sharing tutorials.",
+      "Hamza is the founder and editor of Soft Crochet, a curated directory of the best free crochet patterns. With a passion for handmade crafts and a keen eye for beautiful designs, Hamza brings you hand-picked pattern collections, tutorials, and yarn reviews to inspire your next project.",
     avatar: "https://i.pravatar.cc/200?img=12",
   },
 ];
@@ -102,6 +102,6 @@ export const formatDate = (iso) =>
 export const SITE = {
   name: "Soft Crochet",
   description:
-    "A cozy crochet blog featuring patterns, tutorials, yarn reviews, and handmade inspiration for every skill level.",
+    "Discover the best free crochet patterns, step-by-step tutorials, and yarn reviews. Curated collections for baby blankets, amigurumi, wearables, home decor, and more.",
   url: siteUrl,
 };

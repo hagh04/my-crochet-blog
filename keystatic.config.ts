@@ -13,6 +13,14 @@ export default config({
             format: { contentField: 'content' },
             schema: {
                 title: fields.slug({ name: 'title' }),
+                type: fields.select({
+                    label: 'Post Type',
+                    options: [
+                        { label: 'Article', value: 'article' },
+                        { label: 'Roundup / Directory', value: 'roundup' },
+                    ],
+                    defaultValue: 'article',
+                }),
                 excerpt: fields.text({ label: 'Excerpt' }),
                 date: fields.date({ label: 'Date', validation: { isRequired: true } }),
                 readingTime: fields.integer({ label: 'Reading Time (Minutes)', defaultValue: 5 }),

@@ -1,0 +1,49 @@
+---
+/**
+ * Reusable ad slot placeholder.
+ * Drop this component anywhere you want to place ads later.
+ * Once you have your AdSense code, replace the inner content.
+ *
+ * Usage: <AdSlot slot="in-article" />
+ *        <AdSlot slot="sidebar" />
+ *        <AdSlot slot="leaderboard" />
+ */
+
+interface Props {
+  slot?: "in-article" | "sidebar" | "leaderboard" | "header";
+  class?: string;
+}
+
+const { slot: adSlot = "in-article", class: className = "" } = Astro.props;
+
+const sizeClasses = {
+  "in-article": "min-h-[250px]",
+  sidebar: "min-h-[600px]",
+  leaderboard: "min-h-[90px]",
+  header: "min-h-[90px]",
+};
+---
+
+<div
+  class:list={["ad-slot", sizeClasses[adSlot], className]}
+  data-ad-slot={adSlot}
+  aria-hidden="true"
+>
+  <!-- 
+    Paste your AdSense or ad network code here.
+    Example for AdSense:
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="XXXXXXXXXX"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
+
+<style>
+  .ad-slot:empty {
+    display: none;
+  }
+</style>

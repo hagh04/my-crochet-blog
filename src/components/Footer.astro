@@ -16,11 +16,11 @@ const { flush = false } = Astro.props;
         <a href="/rss.xml" aria-label="RSS" class="hover:text-foreground"><Icon name="rss" class="h-4 w-4" /></a>
         <a href="https://x.com/softcrochet" aria-label="Soft Crochet on X" class="hover:text-foreground"><Icon name="twitter" class="h-4 w-4" /></a>
         <a href="https://github.com/hagh04/my-crochet-blog" aria-label="Soft Crochet on GitHub" class="hover:text-foreground"><Icon name="github" class="h-4 w-4" /></a>
-        <a href="mailto:hello@example.com" aria-label="Email" class="hover:text-foreground"><Icon name="mail" class="h-4 w-4" /></a>
+        <a href="mailto:contact@softcrochet.com" aria-label="Email" class="hover:text-foreground"><Icon name="mail" class="h-4 w-4" /></a>
       </div>
     </div>
     <div>
-      <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Sections</div>
+      <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Categories</div>
       <ul class="mt-3 space-y-2 text-sm">
         {
           categories.slice(0, 5).map((category) => (
@@ -38,14 +38,20 @@ const { flush = false } = Astro.props;
       <ul class="mt-3 space-y-2 text-sm">
         <li><a href="/about" class="hover:text-foreground">About</a></li>
         <li><a href="/contact" class="hover:text-foreground">Contact</a></li>
-        <li><a href="/blog" class="hover:text-foreground">Archive</a></li>
+        <li><a href="/blog" class="hover:text-foreground">Blog</a></li>
         <li><a href="/rss.xml" class="hover:text-foreground">RSS feed</a></li>
+      </ul>
+      <div class="mt-6 text-xs font-medium uppercase tracking-wider text-muted-foreground">Legal</div>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href="/privacy-policy" class="hover:text-foreground">Privacy Policy</a></li>
+        <li><a href="/terms" class="hover:text-foreground">Terms of Service</a></li>
+        <li><a href="/disclaimer" class="hover:text-foreground">Disclaimer</a></li>
       </ul>
     </div>
   </div>
   <div class="border-t border-border/60">
     <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center">
-      <div>&copy; {new Date().getFullYear()} {SITE.name}. Quietly made on the open web.</div>
+      <div>&copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.</div>
       <div>Set in Fraunces &amp; Inter.</div>
     </div>
   </div>

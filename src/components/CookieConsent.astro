@@ -1,0 +1,74 @@
+---
+/**
+ * Cookie consent banner — GDPR/ad-platform compliant.
+ * Stores preference in localStorage. Shows only on first visit.
+ * No framework dependencies.
+ */
+---
+
+<div
+  id="cookie-consent"
+  class="cookie-banner"
+  role="dialog"
+  aria-label="Cookie consent"
+  aria-describedby="cookie-desc"
+  hidden
+>
+  <div class="mx-auto flex max-w-6xl flex-col items-start gap-4 px-5 py-4 sm:flex-row sm:items-center sm:gap-6">
+    <p id="cookie-desc" class="flex-1 text-sm text-muted-foreground">
+      We use cookies to improve your experience and serve relevant ads. By clicking "Accept", you consent to our use of cookies.
+      <a href="/privacy-policy" class="text-foreground underline underline-offset-2 hover:text-primary">Privacy Policy</a>.
+    </p>
+    <div class="flex items-center gap-3">
+      <button
+        type="button"
+        data-cookie-reject
+        class="rounded-md border border-border px-4 py-2 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+      >
+        Reject
+      </button>
+      <button
+        type="button"
+        data-cookie-accept
+        class="rounded-md bg-foreground px-4 py-2 text-xs font-medium text-background hover:opacity-90"
+      >
+        Accept
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-background);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
+  }
+  :global(.dark) .cookie-banner {
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.32);
+  }
+</style>
+
+<script>
+  const banner = document.getElementById("cookie-consent");
+  const consent = localStorage.getItem("cookie-consent");
+
+  if (!consent && banner) {
+    banner.hidden = false;
+  }
+
+  document.querySelector("[data-cookie-accept]")?.addEventListener("click", () => {
+    localStorage.setItem("cookie-consent", "accepted");
+    if (banner) banner.hidden = true;
+  });
+
+  document.querySelector("[data-cookie-reject]")?.addEventListener("click", () => {
+    localStorage.setItem("cookie-consent", "rejected");
+    if (banner) banner.hidden = true;
+  });
+</script>
