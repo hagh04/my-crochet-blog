@@ -39,7 +39,7 @@ export default config({
                     ],
                     defaultValue: 'patterns',
                 }),
-                author: fields.text({ label: 'Author Name' }),
+                author: fields.text({ label: 'Author Name', defaultValue: 'hamza' }),
                 thumbnail: fields.text({
                     label: 'Cloudinary Thumbnail URL',
                     description: 'Paste your Cloudinary link here'

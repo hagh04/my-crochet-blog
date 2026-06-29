@@ -18,7 +18,7 @@ const blog = defineCollection({
       readingTime: z.number().int().positive(),
       category: z.string(),
       tags: z.array(z.string()).default([]),
-      author: z.string(),
+      author: z.string().default("hamza"),
       thumbnail: z.string(),
       imageCredit: z
         .object({
