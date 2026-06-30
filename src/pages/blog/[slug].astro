@@ -346,3 +346,13 @@ const jsonLd = {
     });
   });
 </script>
+
+<script>
+  document.querySelectorAll(".prose-article a[href]").forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    if (href.startsWith("http") && !href.includes(window.location.hostname)) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    }
+  });
+</script>
