@@ -3,6 +3,7 @@ import "../styles.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CookieConsent from "../components/CookieConsent.astro";
+import BackToTop from "../components/BackToTop.astro";
 import { SITE, imageSrc } from "../lib/blog-data.js";
 
 const {
@@ -92,6 +93,7 @@ const ogImageUrl = absoluteUrl(ogImage);
       </main>
       <Footer flush={flushFooter} />
       <CookieConsent />
+      <BackToTop />
     </div>
   </body>
 </html>
