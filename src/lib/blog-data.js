@@ -56,7 +56,10 @@ export const normalizePost = (entry) => ({
   updated: isoDate(entry.data.updated),
 });
 
-export const posts = async () => (await getCollection("blog")).map(normalizePost);
+export const posts = async () =>
+  (await getCollection("blog"))
+    .filter((entry) => !entry.data.draft)
+    .map(normalizePost);
 
 export const getPost = async (slug) => (await posts()).find((post) => post.slug === slug);
 export const getAuthor = (slug) => authors.find((author) => author.slug === slug);

@@ -11,6 +11,7 @@ const blog = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
+      draft: z.boolean().default(false),
       type: z.enum(["article", "roundup"]).default("article"),
       excerpt: z.string().default(""),
       date: z.coerce.date(),

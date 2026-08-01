@@ -14,6 +14,11 @@ export default config({
             format: { contentField: 'content' },
             schema: {
                 title: fields.slug({ name: 'title' }),
+                draft: fields.checkbox({
+                    label: 'Save as Draft',
+                    description: 'Draft posts are saved but hidden from the live site',
+                    defaultValue: true,
+                }),
                 type: fields.select({
                     label: 'Post Type',
                     options: [
