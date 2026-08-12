@@ -1,0 +1,51 @@
+---
+/**
+ * Takes a raw Cloudinary URL and injects format/quality/width
+ * transformations for optimal delivery.
+ *
+ * Usage:
+ *   <OptimizedImage src="https://res.cloudinary.com/.../upload/v123/photo.png" alt="Description" />
+ *   <OptimizedImage src={url} alt="Description" width={600} quality={60} />
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  quality?: "auto" | number;
+  class?: string;
+  loading?: "lazy" | "eager";
+}
+
+const {
+  src,
+  alt,
+  width = 800,
+  quality = "auto",
+  class: className = "",
+  loading = "lazy",
+} = Astro.props;
+
+/**
+ * Inject Cloudinary transformations after /upload/.
+ * Handles URLs with or without existing transformations.
+ */
+function optimizeUrl(url: string, w: number, q: string | number): string {
+  const transforms = `f_auto,q_${q},w_${w}`;
+
+  if (!url.includes("/upload/")) return url;
+
+  return url.replace("/upload/", `/upload/${transforms}/`);
+}
+
+const optimizedSrc = optimizeUrl(src, width, quality);
+---
+
+<img
+  src={optimizedSrc}
+  alt={alt}
+  width={width}
+  loading={loading}
+  decoding="async"
+  class={className}
+/>
