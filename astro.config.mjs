@@ -6,6 +6,8 @@ import keystatic from '@keystatic/astro';
 import tailwindcss from '@tailwindcss/vite';
 import vercel from '@astrojs/vercel';
 
+import { rehypeLazyImages } from './src/lib/rehype-lazy-images.js';
+
 const site =
   process.env.SITE_URL || process.env.PUBLIC_SITE_URL || 'https://softcrochet.com';
 
@@ -13,6 +15,10 @@ export default defineConfig({
   site,
   output: 'server',
   adapter: vercel(),
+
+  markdown: {
+    rehypePlugins: [rehypeLazyImages],
+  },
 
   integrations: [markdoc(), mdx(), react(), keystatic()],
 
