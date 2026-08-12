@@ -43,6 +43,14 @@ const toc = headings
     text: heading.text,
   }));
 const related = await relatedPosts(post);
+
+/** Inject Cloudinary transforms for the hero image (wider at 1200px). */
+function optimizeHeroUrl(src) {
+  if (!src || !src.includes('cloudinary.com') || !src.includes('/upload/')) return src;
+  if (src.includes('f_auto')) return src;
+  return src.replace('/upload/', '/upload/f_auto,q_auto,w_1200/');
+}
+const heroSrc = optimizeHeroUrl(post.thumbnail);
 const { prev, next } = await adjacentPosts(post);
 const canonical = `/blog/${post.slug}`;
 const canonicalUrl = new URL(canonical, SITE.url).toString();
@@ -117,7 +125,7 @@ const jsonLd = {
       post.thumbnail && (
         <figure class="mx-auto mt-10 max-w-4xl">
           <div class="overflow-hidden rounded-md bg-muted">
-            <img src={post.thumbnail} alt={post.imageCredit?.caption ?? ""} class="w-full" fetchpriority="high" loading="eager" />
+            <img src={heroSrc} alt={post.imageCredit?.caption ?? ""} class="w-full" fetchpriority="high" loading="eager" />
           </div>
           {
             post.imageCredit && (
