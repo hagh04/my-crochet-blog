@@ -2,6 +2,7 @@
 /**
  * Renders an external image from a URL.
  * Used as a custom MDX component in Keystatic content.
+ * Automatically injects Cloudinary transforms for optimized delivery.
  */
 
 interface Props {
@@ -10,7 +11,15 @@ interface Props {
   caption?: string;
 }
 
-const { src, alt, caption } = Astro.props;
+const { src: rawSrc, alt, caption } = Astro.props;
+
+function optimizeCloudinaryUrl(url: string): string {
+  if (!url.includes('cloudinary.com') || !url.includes('/upload/')) return url;
+  if (url.includes('f_auto')) return url;
+  return url.replace('/upload/', '/upload/f_auto,q_auto,w_800/');
+}
+
+const src = optimizeCloudinaryUrl(rawSrc);
 ---
 
 <figure class="my-8">
