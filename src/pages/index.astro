@@ -147,7 +147,7 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
         <button
           type="button"
           data-home-filter=""
-          class="rounded-full border px-3 py-1 text-xs transition-colors border-foreground bg-foreground text-background"
+          class="rounded-full border px-4 py-2 text-xs transition-colors border-foreground bg-foreground text-background"
         >
           All
         </button>
@@ -156,7 +156,7 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
             <button
               type="button"
               data-home-filter={category.slug}
-              class="rounded-full border px-3 py-1 text-xs transition-colors border-border text-muted-foreground hover:text-foreground"
+              class="rounded-full border px-4 py-2 text-xs transition-colors border-border text-muted-foreground hover:text-foreground"
             >
               {category.name}
             </button>
