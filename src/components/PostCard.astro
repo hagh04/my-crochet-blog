@@ -7,6 +7,15 @@ const author = getAuthor(post.author);
 const category = getCategory(post.category);
 const searchable = `${post.title} ${post.excerpt}`.toLowerCase();
 const thumbnailIsString = typeof post.thumbnail === "string";
+
+/** Inject Cloudinary transforms for smaller card thumbnails. */
+function optimizeThumb(src: string, w: number): string {
+  if (!src || !src.includes('cloudinary.com') || !src.includes('/upload/')) return src;
+  if (src.includes('f_auto')) return src;
+  return src.replace('/upload/', `/upload/f_auto,q_auto,w_${w}/`);
+}
+const listThumb = thumbnailIsString ? optimizeThumb(post.thumbnail, 440) : post.thumbnail;
+const cardThumb = thumbnailIsString ? optimizeThumb(post.thumbnail, 640) : post.thumbnail;
 ---
 
 {
@@ -69,18 +78,20 @@ const thumbnailIsString = typeof post.thumbnail === "string";
             {
               thumbnailIsString ? (
                 <img
-                  src={post.thumbnail}
+                  src={listThumb}
                   alt=""
                   width="440"
                   height="330"
                   loading="lazy"
+                  decoding="async"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               ) : (
                 <img
-                  src={post.thumbnail}
+                  src={listThumb}
                   alt=""
                   loading="lazy"
+                  decoding="async"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               )
@@ -104,18 +115,20 @@ const thumbnailIsString = typeof post.thumbnail === "string";
             {
               thumbnailIsString ? (
                 <img
-                  src={post.thumbnail}
+                  src={cardThumb}
                   alt=""
                   width="640"
                   height="400"
                   loading="lazy"
+                  decoding="async"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               ) : (
                 <img
-                  src={post.thumbnail}
+                  src={cardThumb}
                   alt=""
                   loading="lazy"
+                  decoding="async"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               )
