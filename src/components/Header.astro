@@ -19,8 +19,8 @@ const headerClass = isHome
   ? "sticky top-0 z-40 border-b border-transparent bg-transparent text-white"
   : "sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md";
 const iconClass = isHome
-  ? "home-header-action inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors"
-  : "inline-flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground";
+  ? "home-header-action inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors"
+  : "inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground";
 ---
 
 <header class={headerClass} data-home-header={isHome ? "true" : undefined} data-scrolled="false">
@@ -118,7 +118,7 @@ const iconClass = isHome
           return (
             <a
               href={item.to}
-              class={`rounded-md px-2 py-2 text-sm hover:bg-muted hover:text-foreground ${active ? "text-foreground" : "text-muted-foreground"}`}
+              class={`rounded-md px-3 py-3 text-sm hover:bg-muted hover:text-foreground ${active ? "text-foreground" : "text-muted-foreground"}`}
               aria-current={active ? "page" : undefined}
             >
               {item.label}

@@ -163,7 +163,7 @@ const jsonLd = {
             post.tags.map((tag) => {
               const item = getTag(tag);
               return (
-                <a href={`/tags/${tag}`} class="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary">
+                <a href={`/tags/${tag}`} class="rounded-full border border-border px-3 py-2 text-xs text-muted-foreground hover:border-primary hover:text-primary">
                   #{item?.name ?? tag}
                 </a>
               );
