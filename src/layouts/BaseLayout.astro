@@ -56,7 +56,14 @@ const ogImageUrl = absoluteUrl(ogImage);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
-    <meta name="google-adsense-account" content="ca-pub-1828428064405057" />
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-7025798228912049" />
+    <script
+      is:inline
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7025798228912049"
+      crossorigin="anonymous"
+    ></script>
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <link
       rel="preload"
